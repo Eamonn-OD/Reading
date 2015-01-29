@@ -1,0 +1,193 @@
+{
+    "words": [
+        {
+            "word": "I",
+          "type" : "preposition",
+
+            "image": "NONE",
+
+
+          "sentences":["I like to _verb_" , "I am a boy"]
+
+        },
+      {
+            "word": "He",
+          "type" : "preposition",
+
+            "image": "NONE",
+
+        "sentences":["He likes to _verb_" , "He is happy"]
+        },
+      {
+            "word": "She",
+          "type" : "preposition",
+
+            "image": "NONE",
+
+        "sentences":["She loves to _verb_" , "I am a boy"]
+        },
+      {
+            "word": "We",
+          "type" : "preposition",
+
+            "image": "NONE",
+
+        "sentences":["We want to _verb_" , "We can _verb_"]
+        },
+      {
+            "word": "They",
+          "type" : "preposition",
+
+            "image": "NONE",
+
+        "sentences":["They want to _verb_" , "They can _verb_"]
+        },
+
+
+      {
+            "word": "all",
+          "type" : "preposition",
+
+            "image": "NONE",
+
+        "sentences":["All the boys want to _verb_" , "I want to eat all the ice cream"]
+        },
+
+       {
+            "word": "at",
+          "type" : "preposition",
+
+            "image": "NONE",
+
+        "sentences":["I _adverb_ to _verb_ at school" ]
+        },
+
+
+
+
+
+        {
+            "word": "like",
+          "type" : "adverb",
+
+            "image": "NONE",
+
+        "sentences":["I like to _verb_" , "We like school"]
+        },
+      {
+            "word": "love",
+          "type" : "adverb",
+
+            "image": "NONE",
+
+        "sentences":["We love to _verb_" , "She loves to _verb_"]
+        },
+      {
+            "word": "want",
+          "type" : "adverb",
+
+            "image": "NONE",
+
+
+        "sentences":["We want to _verb_" , "I want to _verb_"]
+        },
+      {
+            "word": "can",
+          "type" : "nonadverb",
+
+            "image": "NONE",
+
+        "sentences":["We can _verb_" , "I can _verb_"]
+        },
+      {
+            "word": "the",
+          "type" : "nonadverb",
+
+            "image": "NONE",
+
+        "sentences":["I can run to the school" , "The cat loves to eat"]
+        },
+
+ {
+            "word": "it",
+          "type" : "nonadverb",
+
+            "image": "NONE",
+
+        "sentences":["I _adverb_ it" ]
+        },
+
+
+
+
+
+
+
+
+        {
+            "word": "run",
+          "type" : "verb",
+
+            "image": "run.jpg",
+
+        "sentences":["We want to run" , "I can run"]
+
+        },
+      {
+            "word": "jump",
+          "type" : "verb",
+
+            "image": "jump.jpg",
+
+        "sentences":["She likes to jump" , "I love to jump"]
+
+        },
+      {
+            "word": "eat",
+          "type" : "verb",
+
+            "image": "eat.jpg",
+
+        "sentences":["They like to eat" , "I love to eat"]
+
+        },
+
+      {
+            "word": "play",
+          "type" : "verb",
+
+            "image": "play.jpg",
+
+        "sentences":["We want to play" , "We can play"]
+
+        },
+
+      {
+            "word": "learn",
+          "type" : "verb",
+
+            "image": "learn.jpg",
+
+        "sentences":["They love to learn" , "I want to learn to read"]
+
+        },
+      {
+            "word": "read",
+          "type" : "verb",
+
+            "image": "read.jpg",
+
+        "sentences":["We want to read" , "I love to read"]
+
+        },
+      {
+            "word": "drink",
+          "type" : "verb",
+
+            "image": "drink.jpg",
+
+        "sentences":["She likes to drink water" , "I drink water"]
+
+        }
+    ]
+}
