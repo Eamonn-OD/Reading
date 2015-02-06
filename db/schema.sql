@@ -253,4 +253,24 @@ SET @last := LAST_INSERT_ID();
 INSERT INTO sentences(sentence,word_id) VALUES('He is not tired', @last);
 INSERT INTO sentences(sentence,word_id) VALUES('I am not little', @last);
 
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'eight' ,'number-plural' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('I have eight shoes', @last);
+INSERT INTO sentences(sentence,word_id) VALUES('I have eight socks', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'got' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('He got a toy for his birthday', @last);
+INSERT INTO sentences(sentence,word_id) VALUES('I got cold when I played in the snow', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'new' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('She likes her new toy', @last);
+INSERT INTO sentences(sentence,word_id) VALUES('My Dad got a new girlfriend', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'old' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('I am four years old', @last);
+INSERT INTO sentences(sentence,word_id) VALUES('Her dog is very old', @last);
+
 
