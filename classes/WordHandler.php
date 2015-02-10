@@ -13,7 +13,7 @@ class WordHandler {
 
 
   function get_sentences($id){
-  $db=new Db();
+    $db=new Db();
 
      $sentences=array();
     $sql="SELECT * FROM sentences where word_id=" . $id;
