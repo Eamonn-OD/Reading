@@ -2,7 +2,7 @@
 require_once("./classes/Db.php");
 
 class StreakHandler {
-
+  private $date_format = 'Y-m-d H:i:s';
 
 function get_streak($id){
   $db=new Db();
@@ -35,11 +35,16 @@ function add_to_streak($id){
     $streak_data=$this->get_streak($id);
     $streak=$streak_data['streak'];//format is {"streak":[{"id":"1","streak":"0"}]}
 
-    $last_try=DateTime::createFromFormat('Y-m-d', $streak[0]['last_try']);
+
+  $last_try=$this->make_date( 'Y-m-d',$streak[0]['last_try']);//need this format as it add time portion get error
+
     $streak_num=$streak[0]['streak'];
 
    $yesterday= $this->yesterday();
     $today= $this->today();
+//echo "yesterday is ".$yesterday->format($this->date_format)."<br>";
+// echo "today is ".$today->format($this->date_format)."<br>";
+ //echo "last_try was ".$last_try->format($this->date_format)."<br>";
 
 
     if($last_try < $yesterday){//last attempt was before yesterday
@@ -63,7 +68,7 @@ function add_to_streak($id){
 function update_streak($streak,$id){
   $db=new Db();
   $sql="UPDATE streak SET streak=" .$streak.", last_try=sysdate() WHERE id=".$id;
-
+//echo $sql;
   $db->query($sql);
 
 }
@@ -71,20 +76,36 @@ function update_streak($streak,$id){
 
 
 function yesterday(){
-    date_default_timezone_set('America/New_York');
-    $now=date('Y-m-d');
-    $yesterday= DateTime::createFromFormat('Y-m-d', $now,new DateTimeZone('America/New_York'));
-    $yesterday->sub(new DateInterval('P1D'));
+    $yesterday=$this->now();
+
+    $yesterday->sub(new DateInterval('P1D'));//sets date obj to yesterday
     $yesterday->setTime(0, 1);//set time for yesterday as 1 min past midnight
     return $yesterday;
 }
 function today(){
-    date_default_timezone_set('America/New_York');
-    $now=date('Y-m-d');
-    $today= DateTime::createFromFormat('Y-m-d', $now,new DateTimeZone('America/New_York'));
+    $today=$this->now();
 
     $today->setTime(0, 1);//set time for today as 1 min past midnight
     return $today;
 }
+  function now(){
+
+
+    return $this->make_date( $this->date_format,null);
+
+
+  }
+  function make_date($format,$date){
+    $tz_object = new DateTimeZone('America/New_York');
+    if($date==null){
+
+
+
+      $datetime = new DateTime();
+      $datetime->setTimezone($tz_object);
+      return $datetime;
+    }
+    return DateTime::createFromFormat($format, $date,$tz_object );
+  }
 
 }//end of class

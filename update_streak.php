@@ -12,6 +12,6 @@ require_once( './classes/StreakHandler.php');
  $streak=$sh->add_to_streak($id);
 
 
-    unset($_GET);
+unset($_GET);
 
 ?>
