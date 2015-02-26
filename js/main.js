@@ -6,6 +6,7 @@ var APP = (function ($) {
 
   var wordObj;//current word
 
+  var start;  //records start time of learning session
 
 
 
@@ -72,7 +73,7 @@ var APP = (function ($) {
 
 
     my.start= function (){
-
+      start=(new Date).getTime();
 
       $.ajax({
 
@@ -81,6 +82,7 @@ var APP = (function ($) {
       }).done(function( msg ) {
           console.log("Streak Updated");
            console.log("in start function");
+         console.log("session started at "+start);
           $('#main-canvas').show();
           $('#start-button-section').hide();
            getStreak();
@@ -92,19 +94,34 @@ var APP = (function ($) {
     my.getSentence= function () {
 
         var x=DICTIONARY.getSentenceWithImage();
+        if(x.sentence === "DONE!"){
+          var now=(new Date).getTime();
 
+          var duration=now-start;
+          $.ajax({
+
+            url: "update_duration.php",
+            data: { id: 1 ,duration:duration}
+          }).done(function( msg ) {
+             console.log(msg);
+            console.log("DURATION Updated:"+duration);
+
+        });
+        }
 
         hideSightWords();
 
         $("#sentence").text(x.sentence);
 
-
+      if(x!== null && x.image !== null ){
         //show an image
         $("#action-image").show("fast", function() {
 
             $(this).attr('src', "img/"+x.image);
 
         });
+      }
+
 
     };
 

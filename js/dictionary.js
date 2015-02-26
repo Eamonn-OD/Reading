@@ -100,7 +100,12 @@ var DICTIONARY = (function ($) {
       }
 
       result.sentence= sentence;
+    if(result.image ==="NONE" || result.image == undefined){
+       result.image= null;
+    }else{
       result.image= image;
+    }
+
     return result
   }
 
@@ -145,14 +150,11 @@ var DICTIONARY = (function ($) {
       //var wordObj=getRandomWordObjectFrom(incorrectwords);
       if(wordObj==null){
         result.sentence= "DONE!";
+        result.image= null;
 
       }else{
         result=getSentenceFromIncorrectWord(wordObj);
       }
-
-
-
-
 
       return result;
     }
