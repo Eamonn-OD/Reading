@@ -273,4 +273,35 @@ SET @last := LAST_INSERT_ID();
 INSERT INTO sentences(sentence,word_id) VALUES('I am four years old', @last);
 INSERT INTO sentences(sentence,word_id) VALUES('Her dog is very old', @last);
 
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'near' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('You are near me', @last);
+INSERT INTO sentences(sentence,word_id) VALUES('I am near the tiger', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'far' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('She is far away', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'today' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('I went to school today', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'before' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('I watched TV before I had my dinner', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'after' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('I had ice cream after dinner', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'tomorrow' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('I will go to school tomorrow', @last);
+
+INSERT INTO words ( word,type,image, num_attempted,num_successful ) VALUES( 'yesterday' ,'adjective' ,'NONE' , 0,0);
+SET @last := LAST_INSERT_ID();
+INSERT INTO sentences(sentence,word_id) VALUES('I went to school yesterday', @last);
+
+
+
 

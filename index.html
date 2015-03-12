@@ -11,6 +11,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+        <link rel="stylesheet" href="css/calheatmap.css" />
+<script type="text/javascript" src="js/calheatmap.js"></script>
+
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -93,11 +97,12 @@
 
 
 
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-             <script src="js/dictionary.js"></script>
-              <script src="js/pen.js"></script>
+    <script src="js/dictionary.js"></script>
+    <script src="js/pen.js"></script>
         <script src="js/main.js"></script>
 
 
@@ -129,6 +134,15 @@
                 $('#x-mark').bind('click', function() {
                     APP.incorrectSightWord();
                 });
+               var d = new Date();
+                var year_ago=d.setMonth(d.getMonth() - 11);
+	            var cal = new CalHeatMap();
+	            cal.init({start: year_ago,
+	                        range: 12,
+	                        domain: "month",
+	                        subDomain: "day",
+                          data: "http://localhost/Reading/heatmap.php"});
+
 
             });
          </script>
@@ -144,5 +158,7 @@
         </script>
         <!-- Please leave the link(s) in the footer, but please do modify it in any other way you please -->
         <div id="footer"><!-- <a href="http://www.aszx.net">web development</a> by <a href="http://www.bryantsmith.com">bryant smith</a> --></div>
+            <div id="cal-heatmap"></div>
+
         </body>
 </html>
